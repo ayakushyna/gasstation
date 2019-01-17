@@ -15,8 +15,8 @@ class CreateGasColumnsTable extends Migration
     {
         Schema::create('gas_columns', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('gas_station_id')->unsigned()->nullable(false);
-            $table->integer('amount')->unsigned()->nullable(false);
+            $table->integer('gas_station_id')->unsigned();
+            $table->integer('amount')->unsigned();
             $table->timestamps();
         });
     }

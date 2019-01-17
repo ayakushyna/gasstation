@@ -15,8 +15,8 @@ class CreatePositionsTable extends Migration
     {
         Schema::create('positions', function (Blueprint $table) {
             $table->increments('id');
-            $table->double('salary')->unsigned()->nullable(false);
-            $table->string('title',50)->unique()->nullable(false);
+            $table->double('salary')->unsigned();
+            $table->string('title',50)->unique();
             $table->timestamps();
         });
     }

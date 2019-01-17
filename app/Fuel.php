@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Fuel extends Model
 {
+    protected $table = "fuels";
+
+    protected $primaryKey = "id";
+
+    protected $fillable = [
+        'type', 'price', 'amount',
+    ];
+
     public function buyings()
     {
         return $this->hasMany(Buying::class);

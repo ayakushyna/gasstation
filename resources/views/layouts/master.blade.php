@@ -21,6 +21,10 @@
     <link href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
     <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <link rel="stylesheet" type="text/css" href="/plugins/select2/select2.css"/>
+    <link rel="stylesheet" type="text/css" href="/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+    <!-- END PAGE LEVEL STYLES -->
     <!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
     <link href="/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css"/>
     <link href="/plugins/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css"/>
@@ -59,7 +63,7 @@
 
     <!-- BEGIN CONTENT -->
     <div class="page-content-wrapper">
-        <div class="page-content">
+        <div class="page-content" align="center">
 
             @yield('content')
 
@@ -104,11 +108,21 @@
 <script src="/plugins/fullcalendar/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
 <script src="/plugins/jquery-easypiechart/jquery.easypiechart.min.js" type="text/javascript"></script>
 <script src="/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="/scripts/app.js" type="text/javascript"></script>
 <script src="/scripts/index.js" type="text/javascript"></script>
 <script src="/scripts/tasks.js" type="text/javascript"></script>
+<script src="/scripts/table-managed.js"></script>
+<script>
+    jQuery(document).ready(function() {
+        App.init();
+        TableManaged.init();
+    });
+</script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
     jQuery(document).ready(function() {

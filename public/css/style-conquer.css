@@ -296,6 +296,8 @@ Form Layouts
 
 .form {
   padding: 0 !important;
+  margin: auto;
+    vertical-align:middle;
 }
 .form .form-body {
   padding: 10px;

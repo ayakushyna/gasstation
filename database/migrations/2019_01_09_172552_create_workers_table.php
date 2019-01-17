@@ -15,11 +15,11 @@ class CreateWorkersTable extends Migration
     {
         Schema::create('workers', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('gas_station_id')->unsigned()->nullable(false);;
-            $table->integer('position_id')->unsigned()->nullable(false);;
-            $table->string('first_name',50)->nullable(false);
-            $table->string('second_name',50)->nullable(false);
-            $table->date('birthday')->nullable(false);
+            $table->integer('gas_station_id')->unsigned();
+            $table->integer('position_id')->unsigned();
+            $table->string('first_name',50);
+            $table->string('second_name',50);
+            $table->date('birthday');
             $table->timestamps();
         });
     }

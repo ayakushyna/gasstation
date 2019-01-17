@@ -15,8 +15,8 @@ class CreateGasStationsTable extends Migration
     {
         Schema::create('gas_stations', function (Blueprint $table) {
             $table->increments('id');
-            $table->double('earnings')->unsigned()->nullable(false);
-            $table->integer('num_of_columns')->unsigned()->nullable(false);
+            $table->double('earnings')->unsigned();
+            $table->integer('num_of_columns')->unsigned();
             $table->timestamps();
         });
     }

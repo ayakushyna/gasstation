@@ -91,10 +91,10 @@ var TableManaged = function () {
             },
             "columnDefs": [{  // set default column settings
                 'orderable': false,
-                'targets': [0]
+                'targets': [0, -1]
             }, {
                 "searchable": false,
-                "targets": [0]
+                "targets": [0, -1]
             }],
             "order": [
                 [1, "asc"]

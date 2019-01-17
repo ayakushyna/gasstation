@@ -15,9 +15,9 @@ class CreateFuelsTable extends Migration
     {
         Schema::create('fuels', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('amount')->unsigned()->nullable(false);
-            $table->double('price')->unsigned()->nullable(false);
-            $table->string('type', 50)->nullable(false);
+            $table->integer('amount')->unsigned();
+            $table->double('price')->unsigned();
+            $table->string('type', 50);
             $table->timestamps();
         });
     }

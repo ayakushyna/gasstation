@@ -15,9 +15,9 @@ class CreateEarningHistoriesTable extends Migration
     {
         Schema::create('earning_histories', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('gas_station_id')->unsigned()->nullable(false);
-            $table->double('earnings')->nullable(false);
-            $table->date('date')->nullable(false);
+            $table->integer('gas_station_id')->unsigned();
+            $table->double('earnings');
+            $table->date('date');
             $table->timestamps();
         });
     }

@@ -15,12 +15,12 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('fuel_id')->unsigned()->nullable(false);
-            $table->integer('client_id')->unsigned()->nullable(false);
-            $table->integer('worker_id')->unsigned()->nullable(false);
-            $table->integer('amount')->unsigned()->nullable(false);
-            $table->double('price')->unsigned()->nullable(false);
-            $table->date('date')->nullable(false);
+            $table->integer('fuel_id')->unsigned();
+            $table->integer('client_id')->unsigned();
+            $table->integer('worker_id')->unsigned();
+            $table->integer('amount')->unsigned();
+            $table->double('price')->unsigned();
+            $table->date('date');
             $table->timestamps();
         });
     }

@@ -15,11 +15,11 @@ class CreateBuyingsTable extends Migration
     {
         Schema::create('buyings', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('fuel_id')->unsigned()->nullable(false);
-            $table->integer('provisioner_id')->unsigned()->nullable(false);
-            $table->integer('amount')->unsigned()->nullable(false);
-            $table->double('price')->unsigned()->nullable(false);
-            $table->date('date')->nullable(false);
+            $table->integer('fuel_id')->unsigned();
+            $table->integer('provisioner_id')->unsigned();
+            $table->integer('amount')->unsigned();
+            $table->double('price')->unsigned();
+            $table->date('date');
             $table->timestamps();
         });
     }
