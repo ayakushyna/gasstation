@@ -23,6 +23,21 @@
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN PAGE LEVEL STYLES -->
     <link rel="stylesheet" type="text/css" href="/plugins/select2/select2.css"/>
+    <link rel="stylesheet" type="text/css" href="/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
+    <link rel="stylesheet" type="text/css" href="/plugins/gritter/css/jquery.gritter.css"/>
+    <link rel="stylesheet" type="text/css" href="/plugins/select2/select2.css"/>
+    <link rel="stylesheet" type="text/css" href="/plugins/clockface/css/clockface.css"/>
+    <link rel="stylesheet" type="text/css" href="/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css"/>
+    <link rel="stylesheet" type="text/css" href="/plugins/bootstrap-datepicker/css/datepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/plugins/bootstrap-colorpicker/css/colorpicker.css"/>
+    <link rel="stylesheet" type="text/css" href="/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css"/>
+    <link rel="stylesheet" type="text/css" href="/plugins/bootstrap-datetimepicker/css/datetimepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="/plugins/jquery-multi-select/css/multi-select.css"/>
+    <link rel="stylesheet" type="text/css" href="/plugins/bootstrap-switch/css/bootstrap-switch.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/plugins/jquery-tags-input/jquery.tagsinput.css"/>
+    <link rel="stylesheet" type="text/css" href="/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
+    <link rel="stylesheet" type="text/css" href="/plugins/typeahead/typeahead.css">
     <link rel="stylesheet" type="text/css" href="/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
     <!-- END PAGE LEVEL STYLES -->
     <!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
@@ -89,6 +104,31 @@
 <script src="/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
+<script type="text/javascript" src="/plugins/fuelux/js/spinner.min.js"></script>
+<script type="text/javascript" src="/plugins/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/plugins/bootstrap-fileinput/bootstrap-fileinput.js"></script>
+<script type="text/javascript" src="/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
+<script type="text/javascript" src="/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+<script type="text/javascript" src="/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="/plugins/clockface/js/clockface.js"></script>
+<script type="text/javascript" src="/plugins/bootstrap-daterangepicker/moment.min.js"></script>
+<script type="text/javascript" src="/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+<script type="text/javascript" src="/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+<script type="text/javascript" src="/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js"></script>
+<script type="text/javascript" src="/plugins/jquery.input-ip-address-control-1.0.min.js"></script>
+<script type="text/javascript" src="/plugins/jquery-multi-select/js/jquery.multi-select.js"></script>
+<script src="/plugins/bootstrap-pwstrength/pwstrength-bootstrap.min.js" type="text/javascript"></script>
+<script src="/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="/plugins/jquery-tags-input/jquery.tagsinput.min.js" type="text/javascript"></script>
+<script src="/plugins/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript"></script>
+<script src="/plugins/bootstrap-markdown/lib/markdown.js" type="text/javascript"></script>
+<script src="/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+<script src="/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script>
+<script src="/plugins/typeahead/handlebars.min.js" type="text/javascript"></script>
+<script src="/plugins/typeahead/typeahead.bundle.min.js" type="text/javascript"></script>
 <script src="/plugins/jqvmap/jqvmap/jquery.vmap.js" type="text/javascript"></script>
 <script src="/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js" type="text/javascript"></script>
 <script src="/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js" type="text/javascript"></script>
@@ -117,12 +157,8 @@
 <script src="/scripts/index.js" type="text/javascript"></script>
 <script src="/scripts/tasks.js" type="text/javascript"></script>
 <script src="/scripts/table-managed.js"></script>
-<script>
-    jQuery(document).ready(function() {
-        App.init();
-        TableManaged.init();
-    });
-</script>
+<script src="/scripts/form-components.js"></script>
+
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
     jQuery(document).ready(function() {
@@ -137,6 +173,8 @@
         Index.initKnowElements();
         Index.initDashboardDaterange();
         Tasks.initDashboardWidget();
+        TableManaged.init();
+        FormComponents.init();
     });
 </script>
 <!-- END JAVASCRIPTS -->

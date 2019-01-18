@@ -3,7 +3,7 @@
 @section('content')
     <div class="portlet-body form">
         <!-- BEGIN FORM-->
-        <form method="POST" action="{{route('fuels.update', ['fuel' => $fuel['id']])}}" class="form-horizontal">
+        <form method="POST" action="{{route('fuels.update', ['fuel' => $fuel['id']])}}" class="form-horizontal" >
             @csrf
             <div class="form-body">
                 <div class="form-group">
@@ -13,14 +13,14 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-3 control-label" for="credit">Total Amount, L</label>
+                    <label class="col-md-3 control-label">Total Amount, L</label>
                     <div class="col-md-2">
-                        <input type="number" value="{{ $fuel->amount }}" min="0" step="1" class="form-control form-control-line" id="amount" name="amount" >
+                        <input type="number" value="{{ $fuel->amount }}" min="0" step="1" class="form-control form-control-line" id="amount" name="amount" required>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-3 control-label" for="credit">Price per L, $</label>
+                    <label class="col-md-3 control-label">Price per L, $</label>
                     <div class="col-md-2">
                         <input type="number" value="{{ $fuel->price }}" min="0" step="0.01" class="form-control form-control-line" id="price" name="price" required>
                     </div>

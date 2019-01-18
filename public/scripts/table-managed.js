@@ -77,11 +77,11 @@ var TableManaged = function () {
 
         table.dataTable({
             "lengthMenu": [
-                [5, 15, 20, -1],
-                [5, 15, 20, "All"] // change per page values here
+                [10, 15, 20, -1],
+                [10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "pageLength": 5,
+            "pageLength": 10,
             "language": {
                 "lengthMenu": " _MENU_ records",
                 "paging": {

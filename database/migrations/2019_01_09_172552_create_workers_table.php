@@ -18,7 +18,7 @@ class CreateWorkersTable extends Migration
             $table->integer('gas_station_id')->unsigned();
             $table->integer('position_id')->unsigned();
             $table->string('first_name',50);
-            $table->string('second_name',50);
+            $table->string('last_name',50);
             $table->date('birthday');
             $table->timestamps();
         });

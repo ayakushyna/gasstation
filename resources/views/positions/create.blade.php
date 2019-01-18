@@ -3,27 +3,20 @@
 @section('content')
     <div class="portlet-body form" >
         <!-- BEGIN FORM-->
-        <form method="POST" action="{{route('fuels.store')}}" class="form-horizontal">
+        <form method="POST" action="{{route('positions.store')}}" class="form-horizontal">
             @csrf
             <div class="form-body">
                 <div class="form-group">
-                    <label class="col-md-3 control-label">Type</label>
+                    <label class="col-md-3 control-label">Title</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" id="type" name="type" placeholder="Enter type" required>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Enter title" required>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-3 control-label">Total Amount, L</label>
+                    <label class="col-md-3 control-label" >Salary, $</label>
                     <div class="col-md-2">
-                        <input type="number" min="0" step="1" value="0" class="form-control form-control-line" id="amount" name="amount" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Price per L, $</label>
-                    <div class="col-md-2">
-                        <input type="number" min="0" step="0.01" value="0" class="form-control form-control-line" id="price" name="price" required>
+                        <input type="number" min="0" step="1" value="0" class="form-control form-control-line" id="salary" name="salary" required>
                     </div>
                 </div>
             </div>

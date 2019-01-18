@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class GasStation extends Model
 {
+    protected $table = "gas_stations";
+
+    protected $primaryKey = "id";
+
+    protected $fillable = [
+        'name',
+    ];
+
     public function gas_columns()
     {
         return $this->hasMany(GasColumn::class);
