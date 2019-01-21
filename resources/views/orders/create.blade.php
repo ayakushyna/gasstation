@@ -10,7 +10,8 @@
                 <div class="form-group">
                     <label class="control-label col-md-3" >Fuel</label>
                     <div class="col-md-4">
-                        <select class="form-control select2me" name="fuel">
+                        <select class="form-control select2me" name="fuel" required>
+                            <option value=""></option>
                             @foreach($fuels as $fuel)
                                 <option value="{{$fuel->id}}">{{ $fuel->type }}</option>
                             @endforeach
@@ -21,7 +22,8 @@
                 <div class="form-group">
                     <label class="control-label col-md-3" >Client</label>
                     <div class="col-md-4">
-                        <select class="form-control select2me" name="client">
+                        <select class="form-control select2me" name="client" required>
+                            <option value=""></option>
                             @foreach($clients as $client)
                                 <option value="{{$client->id}}">{{ $client->last_name }} {{ $client->first_name }}</option>
                             @endforeach
@@ -32,7 +34,8 @@
                 <div class="form-group">
                     <label class="control-label col-md-3" >Worker</label>
                     <div class="col-md-4">
-                        <select class="form-control select2me" name="worker">
+                        <select class="form-control select2me" name="worker" required>
+                            <option value=""></option>
                             @foreach($workers as $worker)
                                 <option value="{{$worker->id}}">{{ $worker->last_name }} {{ $worker->first_name }}</option>
                             @endforeach
@@ -61,6 +64,8 @@
                     </div>
                 </div>
 
+                @include('layouts.errors')
+
             </div>
             <div class="form-actions">
                 <div class="row">
@@ -70,7 +75,6 @@
                     </div>
                 </div>
             </div>
-            @include('layouts.errors')
         </form>
         <!-- END FORM-->
     </div>

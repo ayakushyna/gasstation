@@ -12,6 +12,9 @@
                         <input type="text" value="{{$gas_station->name}}" class="form-control" id="name" name="name" required>
                     </div>
                 </div>
+
+                @include('layouts.errors')
+
             </div>
             <div class="form-actions">
                 <div class="row">
@@ -21,7 +24,6 @@
                     </div>
                 </div>
             </div>
-            @include('layouts.errors')
         </form>
         <!-- END FORM-->
     </div>

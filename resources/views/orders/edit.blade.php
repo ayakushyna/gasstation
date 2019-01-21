@@ -9,7 +9,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-3" >Fuel</label>
                     <div class="col-md-4">
-                        <select class="form-control select2me" name="fuel" data-placeholder="Select Fuel">
+                        <select class="form-control select2me" name="fuel" data-placeholder="Select Fuel" required>
                             @foreach($fuels as $fuel)
                                 @if($fuel == $order->$fuel)
                                     <option value="{{$fuel->id}}" selected>{{ $fuel->type }}</option>
@@ -23,7 +23,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-3" >Client</label>
                     <div class="col-md-4">
-                        <select class="form-control select2me" name="client" data-placeholder="Select Client">
+                        <select class="form-control select2me" name="client" data-placeholder="Select Client" required>
                             @foreach($clients as $client)
                                 @if($client == $order->$client)
                                     <option value="{{$client->id}}" selected>{{ $client->last_name }} {{ $client->first_name }}</option>
@@ -37,7 +37,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-3" >Worker</label>
                     <div class="col-md-4">
-                        <select class="form-control select2me" name="worker" data-placeholder="Select Worker">
+                        <select class="form-control select2me" name="worker" data-placeholder="Select Worker" required>
                             @foreach($workers as $worker)
                                 @if($worker == $order->$worker)
                                     <option value="{{$worker->id}}" selected>{{ $worker->last_name }} {{ $worker->first_name }}</option>
@@ -68,6 +68,9 @@
                         <input class="form-control form-control-inline date-picker" size="16" type="text" data-date-format="dd-mm-yyyy" value="{{ \Carbon\Carbon::parse($order->birthday)->format('d-m-Y') }}" id="date" name="date"/>
                     </div>
                 </div>
+
+                @include('layouts.errors')
+
             </div>
             <div class="form-actions">
                 <div class="row">
@@ -77,7 +80,6 @@
                     </div>
                 </div>
             </div>
-            @include('layouts.errors')
         </form>
         <!-- END FORM-->
     </div>

@@ -25,6 +25,9 @@
                         <input type="number" value="{{ $fuel->price }}" min="0" step="0.01" class="form-control form-control-line" id="price" name="price" required>
                     </div>
                 </div>
+
+                @include('layouts.errors')
+
             </div>
             <div class="form-actions">
                 <div class="row">
@@ -34,7 +37,6 @@
                     </div>
                 </div>
             </div>
-            @include('layouts.errors')
         </form>
         <!-- END FORM-->
     </div>

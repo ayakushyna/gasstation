@@ -36,12 +36,12 @@ class EarningHistoryController extends Controller
     public function store()
     {
         $validator = Validator::make( request()->all(),[
-            'earnings' => 'required',
-            'date' => 'required',
+            'earnings' => 'required|numeric',
+            'date' => 'required|date',
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors'=>$validator->errors()]);
+            return redirect()->route('earning_histories.create')->withErrors($validator)->withInput();
         }
 
         EarningHistory::insert([
@@ -56,12 +56,12 @@ class EarningHistoryController extends Controller
     public function update(EarningHistory $earning_history)
     {
         $validator = Validator::make( request()->all(),[
-            'earnings' => 'required',
-            'date' => 'required',
+            'earnings' => 'required|numeric',
+            'date' => 'required|date',
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors'=>$validator->errors()]);
+            return redirect()->route('earning_histories.edit')->withErrors($validator)->withInput();
         }
 
         EarningHistory::where('id',$earning_history->id)->update([

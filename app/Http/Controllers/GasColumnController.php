@@ -6,6 +6,7 @@ use App\GasColumn;
 use App\GasStation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class GasColumnController extends Controller
 {
@@ -36,12 +37,14 @@ class GasColumnController extends Controller
     public function store()
     {
         $validator = Validator::make( request()->all(),[
-            'serial_number' => 'required',
-            'amount' => 'required',
+            'serial_number' => ['required','numeric','max:10', Rule::unique('gas_columns','serial_number')->where(function ($query) {
+                return $query->where('gas_station_id', request('gas_station'));
+            })],
+            'amount' => 'required|numeric|max:1000',
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors'=>$validator->errors()]);
+            return redirect()->route('gas_columns.create')->withErrors($validator)->withInput();
         }
 
         GasColumn::insert([
@@ -56,12 +59,14 @@ class GasColumnController extends Controller
     public function update(GasColumn $gas_column)
     {
         $validator = Validator::make( request()->all(),[
-            'serial_number' => 'required',
-            'amount' => 'required',
+            'serial_number' => ['required','numeric','max:10', Rule::unique('gas_columns','serial_number')->where(function ($query) {
+                return $query->where('gas_station_id', request('gas_station'));
+            })],
+            'amount' => 'required|numeric|max:1000',
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors'=>$validator->errors()]);
+            return redirect()->route('gas_columns.edit')->withErrors($validator)->withInput();
         }
 
         GasColumn::where('id',$gas_column->id)->update([

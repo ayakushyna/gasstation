@@ -33,13 +33,13 @@ class ProvisionerController extends Controller
     public function store()
     {
         $validator = Validator::make( request()->all(),[
-            'first_name' => 'required',
-            'last_name'=>'required',
-            'email' => 'required',
+            'first_name' => 'required|max:50',
+            'last_name'=>'required|max:50',
+            'email' => 'required|email|max:70',
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors'=>$validator->errors()]);
+            return redirect()->route('provisioners.create')->withErrors($validator)->withInput();
         }
 
         Provisioner::insert([
@@ -54,13 +54,13 @@ class ProvisionerController extends Controller
     public function update(Provisioner $provisioner)
     {
         $validator = Validator::make( request()->all(),[
-            'first_name' => 'required',
-            'last_name'=>'required',
-            'email' => 'required',
+            'first_name' => 'required|max:50',
+            'last_name'=>'required|max:50',
+            'email' => 'required|email|max:70',
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors'=>$validator->errors()]);
+            return redirect()->route('provisioners.edit')->withErrors($validator)->withInput();
         }
 
         Provisioner::where('id',$provisioner->id)->update([

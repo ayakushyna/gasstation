@@ -9,7 +9,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-3">Gas Station</label>
                     <div class="col-md-4">
-                        <select class="form-control select2me" data-placeholder="Select Gas Station" name="gas_station">
+                        <select class="form-control select2me" data-placeholder="Select Gas Station" name="gas_station" required>
                             <option value=""></option>
                             @foreach($gas_stations as $gas_station)
                                 <option value="{{$gas_station->id}}">{{ $gas_station->name }}</option>
@@ -31,6 +31,9 @@
                         <input class="form-control form-control-inline date-picker" size="16" type="text" data-date-format="dd-mm-yyyy" value="" id="date" name="date"/>
                     </div>
                 </div>
+
+                @include('layouts.errors')
+
             </div>
             <div class="form-actions">
                 <div class="row">
@@ -40,7 +43,6 @@
                     </div>
                 </div>
             </div>
-            @include('layouts.errors')
         </form>
         <!-- END FORM-->
     </div>

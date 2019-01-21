@@ -33,13 +33,13 @@ class ClientController extends Controller
     public function store()
     {
         $validator = Validator::make( request()->all(),[
-            'first_name' => 'required',
-            'last_name'=>'required',
-            'email' => 'required',
+            'first_name' => 'required|max:50',
+            'last_name'=>'required|max:50',
+            'email' => 'required|email|max:70',
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors'=>$validator->errors()]);
+            return redirect()->route('clients.create')->withErrors($validator)->withInput();
         }
 
         Client::insert([
@@ -54,13 +54,13 @@ class ClientController extends Controller
     public function update(Client $client)
     {
         $validator = Validator::make( request()->all(),[
-            'first_name' => 'required',
-            'last_name'=>'required',
-            'email' => 'required',
+            'first_name' => 'required|max:50',
+            'last_name'=>'required|max:50',
+            'email' => 'required|email|max:70',
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors'=>$validator->errors()]);
+            return redirect()->route('clients.edit')->withErrors($validator)->withInput();
         }
 
         Client::where('id',$client->id)->update([

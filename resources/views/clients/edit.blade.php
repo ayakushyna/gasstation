@@ -26,6 +26,9 @@
                         <input type="email" value="{{$client->email}}" class="form-control form-control-line" name="email" id="email" required>
                     </div>
                 </div>
+
+                @include('layouts.errors')
+
             </div>
             <div class="form-actions">
                 <div class="row">
@@ -35,7 +38,6 @@
                     </div>
                 </div>
             </div>
-            @include('layouts.errors')
         </form>
         <!-- END FORM-->
     </div>

@@ -33,12 +33,12 @@ class PositionController extends Controller
     public function store()
     {
         $validator = Validator::make( request()->all(),[
-            'title' => 'required',
-            'salary'=>'required',
+            'title' => 'required|max:50',
+            'salary'=>'required|numeric',
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors'=>$validator->errors()]);
+            return redirect()->route('positions.create')->withErrors($validator)->withInput();
         }
 
         Position::insert([
@@ -52,12 +52,12 @@ class PositionController extends Controller
     public function update(Position $position)
     {
         $validator = Validator::make( request()->all(),[
-            'title' => 'required',
-            'salary'=>'required',
+            'title' => 'required|max:50',
+            'salary'=>'required|numeric',
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors'=>$validator->errors()]);
+            return redirect()->route('positions.edit')->withErrors($validator)->withInput();
         }
 
         Position::where('id',$position->id)->update([

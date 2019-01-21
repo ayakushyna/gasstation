@@ -36,6 +36,9 @@
                         <input type="number" min="0" step="1" value="0" class="form-control form-control-line" id="amount" name="amount" required>
                     </div>
                 </div>
+
+                @include('layouts.errors')
+
             </div>
             <div class="form-actions">
                 <div class="row">
@@ -45,7 +48,6 @@
                     </div>
                 </div>
             </div>
-            @include('layouts.errors')
         </form>
         <!-- END FORM-->
     </div>

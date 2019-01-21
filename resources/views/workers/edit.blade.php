@@ -30,7 +30,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-3" >Gas Station</label>
                     <div class="col-md-4">
-                        <select class="form-control select2me" name="gas_station">
+                        <select class="form-control select2me" name="gas_station" required>
                             @foreach($gas_stations as $gas_station)
                                 @if($gas_station == $worker->gas_station)
                                     <option value="{{$gas_station->id}}" selected>{{ $gas_station->name }}</option>
@@ -44,7 +44,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-3" >Position</label>
                     <div class="col-md-4">
-                        <select class="form-control select2me" name="position">
+                        <select class="form-control select2me" name="position" required>
                             @foreach($positions as $position)
                                 @if($position == $worker->position)
                                     <option value="{{$position->id}}" selected>{{ $position->title }}</option>
@@ -54,6 +54,9 @@
                         </select>
                     </div>
                 </div>
+
+                @include('layouts.errors')
+
             </div>
             <div class="form-actions">
                 <div class="row">
@@ -63,7 +66,6 @@
                     </div>
                 </div>
             </div>
-            @include('layouts.errors')
         </form>
         <!-- END FORM-->
     </div>

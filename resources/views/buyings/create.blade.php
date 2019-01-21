@@ -22,7 +22,6 @@
                     <label class="control-label col-md-3">Fuel</label>
                     <div class="col-md-4">
                         <select class="form-control select2me" data-placeholder="Select Fuel" name="fuel" required>
-                            <option value=""></option>
                             @foreach($fuels as $fuel)
                                 <option value="{{$fuel->id}}">{{ $fuel->type }}</option>
                             @endforeach
@@ -43,6 +42,9 @@
                         <input type="number" min="0" step="0.1" value="0" class="form-control form-control-line" id="price" name="price" required>
                     </div>
                 </div>
+
+                @include('layouts.errors')
+
             </div>
             <div class="form-actions">
                 <div class="row">
@@ -52,7 +54,6 @@
                     </div>
                 </div>
             </div>
-            @include('layouts.errors')
         </form>
         <!-- END FORM-->
     </div>

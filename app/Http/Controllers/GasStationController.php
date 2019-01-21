@@ -33,11 +33,11 @@ class GasStationController extends Controller
     public function store()
     {
         $validator = Validator::make( request()->all(),[
-            'name' => 'required',
+            'name' => 'required|max:50',
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors'=>$validator->errors()]);
+            return redirect()->route('gas_stations.create')->withErrors($validator)->withInput();
         }
 
         GasStation::insert([
@@ -50,11 +50,11 @@ class GasStationController extends Controller
     public function update(GasStation $gas_station)
     {
         $validator = Validator::make( request()->all(),[
-            'name' => 'required',
+            'name' => 'required|max:50',
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors'=>$validator->errors()]);
+            return redirect()->route('gas_stations.edit')->withErrors($validator)->withInput();
         }
 
         GasStation::where('id',$gas_station->id)->update([

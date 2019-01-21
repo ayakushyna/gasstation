@@ -33,13 +33,13 @@ class FuelController extends Controller
     public function store()
     {
         $validator = Validator::make( request()->all(),[
-            'type' => 'required',
-            'amount'=>'required',
-            'price' => 'required',
+            'type' => 'required|numeric|max:50',
+            'amount'=>'required|numeric|max:1000',
+            'price' => 'required|numeric',
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors'=>$validator->errors()]);
+            return redirect()->route('fuels.create')->withErrors($validator)->withInput();
         }
 
         Fuel::insert([
@@ -54,13 +54,13 @@ class FuelController extends Controller
     public function update(Fuel $fuel)
     {
         $validator = Validator::make( request()->all(),[
-            'type' => 'required',
-            'amount'=>'required',
-            'price' => 'required',
+            'type' => 'required|numeric|max:50',
+            'amount'=>'required|numeric|max:1000',
+            'price' => 'required|numeric',
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors'=>$validator->errors()]);
+            return redirect()->route('fuels.edit')->withErrors($validator)->withInput();
         }
 
         Fuel::where('id',$fuel->id)->update([

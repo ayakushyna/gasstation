@@ -9,7 +9,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-3" >Gas Station</label>
                     <div class="col-md-4">
-                        <select class="form-control select2me" name="gas_station">
+                        <select class="form-control select2me" name="gas_station" required>
                             @foreach($gas_stations as $gas_station)
                                 @if($gas_station == $earning_history->gas_station)
                                     <option value="{{$gas_station->id}}" selected>{{ $gas_station->name }}</option>
@@ -33,6 +33,9 @@
                         <input class="form-control form-control-inline date-picker" size="16" type="text" data-date-format="dd-mm-yyyy" value="{{ \Carbon\Carbon::parse($earning_history->date)->format('d-m-Y') }}" id="date" name="date"/>
                     </div>
                 </div>
+
+                @include('layouts.errors')
+
             </div>
             <div class="form-actions">
                 <div class="row">
@@ -42,7 +45,6 @@
                     </div>
                 </div>
             </div>
-            @include('layouts.errors')
         </form>
         <!-- END FORM-->
     </div>
