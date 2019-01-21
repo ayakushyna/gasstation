@@ -30,7 +30,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-3">Date</label>
                     <div class="col-md-3">
-                        <input class="form-control form-control-inline date-picker" size="16" type="text" value="{{ \Carbon\Carbon::parse($earning_history->date)->format('m/d/Y') }}" id="date" name="date"/>
+                        <input class="form-control form-control-inline date-picker" size="16" type="text" data-date-format="dd-mm-yyyy" value="{{ \Carbon\Carbon::parse($earning_history->date)->format('d-m-Y') }}" id="date" name="date"/>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                 <div class="row">
                     <div class="col-md-offset-3 col-md-9">
                         <button type="submit" class="btn btn-info">Submit</button>
-                        <button type="button" class="btn btn-default">Cancel</button>
+                        <a href="{{route('earning_histories')}}" class="btn btn-default"> Cancel </a>
                     </div>
                 </div>
             </div>

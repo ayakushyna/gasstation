@@ -16,7 +16,7 @@ class CreateAddingsTable extends Migration
         Schema::create('addings', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('fuel_id')->unsigned();
-            $table->integer('column_id')->unsigned();
+            $table->integer('gas_column_id')->unsigned();
             $table->integer('amount')->unsigned();
             $table->timestamps();
         });

@@ -66,3 +66,30 @@ Route::post('/earning_histories/store', 'EarningHistoryController@store')->name(
 Route::post('/earning_histories/{earning_history}', 'EarningHistoryController@update')->name('earning_histories.update');
 Route::post('/earning_histories', 'EarningHistoryController@delete')->name('earning_histories.delete');
 
+Route::get('/addings', 'AddingController@index')->name('addings');
+Route::get('/addings/create', 'AddingController@create')->name('addings.create');
+Route::get('/addings/{adding}/edit', 'AddingController@edit')->name('addings.edit');
+Route::post('/addings/store', 'AddingController@store')->name('addings.store');
+Route::post('/addings/{adding}', 'AddingController@update')->name('addings.update');
+Route::post('/addings', 'AddingController@delete')->name('addings.delete');
+
+Route::get('/buyings', 'BuyingController@index')->name('buyings');
+Route::get('/buyings/create', 'BuyingController@create')->name('buyings.create');
+Route::get('/buyings/{buying}/edit', 'BuyingController@edit')->name('buyings.edit');
+Route::post('/buyings/store', 'BuyingController@store')->name('buyings.store');
+Route::post('/buyings/{buying}', 'BuyingController@update')->name('buyings.update');
+Route::post('/buyings', 'BuyingController@delete')->name('buyings.delete');
+
+Route::get('/workers', 'WorkerController@index')->name('workers');
+Route::get('/workers/create', 'WorkerController@create')->name('workers.create');
+Route::get('/workers/{worker}/edit', 'WorkerController@edit')->name('workers.edit');
+Route::post('/workers/store', 'WorkerController@store')->name('workers.store');
+Route::post('/workers/{worker}', 'WorkerController@update')->name('workers.update');
+Route::post('/workers', 'WorkerController@delete')->name('workers.delete');
+
+Route::get('/orders', 'OrderController@index')->name('orders');
+Route::get('/orders/create', 'OrderController@create')->name('orders.create');
+Route::get('/orders/{order}/edit', 'OrderController@edit')->name('orders.edit');
+Route::post('/orders/store', 'OrderController@store')->name('orders.store');
+Route::post('/orders/{order}', 'OrderController@update')->name('orders.update');
+Route::post('/orders', 'OrderController@delete')->name('orders.delete');

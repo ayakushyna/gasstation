@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-md-offset-3 col-md-9">
                         <button type="submit" class="btn btn-info">Submit</button>
-                        <button type="button" class="btn btn-default">Cancel</button>
+                        <a href="{{route('positions')}}" class="btn btn-default"> Cancel </a>
                     </div>
                 </div>
             </div>
