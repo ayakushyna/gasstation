@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\GasColumn;
 use App\GasStation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -15,7 +16,16 @@ class GasStationController extends Controller
 
     public function index()
     {
-        $gas_stations = GasStation::orderBy('name')->get();
+        $gas_stations = GasStation::withCount('gas_columns')
+            ->with('earning_histories')
+            ->get();
+
+//        foreach($gas_stations as $key => $gs) {
+//            $num[] = [
+//                'gas_columns_count' => count($gs['gas_columns'])
+//            ];
+//            $result[$key] = array_merge($gas_stations[$key], $num[$key]);
+//        }
 
         return view('gas_stations.index', compact('gas_stations'));
     }

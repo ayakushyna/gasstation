@@ -22,6 +22,7 @@
                     <label class="control-label col-md-3">Fuel</label>
                     <div class="col-md-4">
                         <select class="form-control select2me" data-placeholder="Select Fuel" name="fuel" required>
+                            <option value=""></option>
                             @foreach($fuels as $fuel)
                                 <option value="{{$fuel->id}}">{{ $fuel->type }}</option>
                             @endforeach
@@ -40,6 +41,13 @@
                     <label class="col-md-3 control-label">Price, $</label>
                     <div class="col-md-2">
                         <input type="number" min="0" step="0.1" value="0" class="form-control form-control-line" id="price" name="price" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3">Date</label>
+                    <div class="col-md-3">
+                        <input class="form-control form-control-inline date-picker" size="16" type="text" data-date-format="dd-mm-yyyy" value="" id="date" name="date"/>
                     </div>
                 </div>
 

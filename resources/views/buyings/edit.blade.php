@@ -50,6 +50,13 @@
                     </div>
                 </div>
 
+                <div class="form-group">
+                    <label class="control-label col-md-3">Date</label>
+                    <div class="col-md-3">
+                        <input class="form-control form-control-inline date-picker" size="16" type="text" data-date-format="dd-mm-yyyy" value="{{ \Carbon\Carbon::parse($buying->date)->format('d-m-Y') }}" id="date" name="date"/>
+                    </div>
+                </div>
+
                 @include('layouts.errors')
 
             </div>

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class GasStation extends Model
 {
@@ -19,7 +20,7 @@ class GasStation extends Model
         return $this->hasMany(GasColumn::class);
     }
 
-    public function earning_history()
+    public function earning_histories()
     {
         return $this->hasMany(EarningHistory::class);
     }

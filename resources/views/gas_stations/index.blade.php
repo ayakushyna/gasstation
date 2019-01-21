@@ -38,8 +38,8 @@
                     </td>
                     <td rowspan="1">{{ ++$index }}</td>
                     <td>{{ $gas_station->name }}</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ $gas_station->gas_columns_count }}</td>
+                    <td>{{ $gas_station->earning_histories->sum('earnings')}}</td>
                     <td>
                         <a href="{{route('gas_stations.edit', ['gas_station' => $gas_station['id']])}}"  class="btn btn-info btn-xs purple"> <i class="fa fa-pencil"></i> Edit </a>
                     </td>

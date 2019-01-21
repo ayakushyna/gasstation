@@ -28,6 +28,7 @@
                     <th>Fuel</th>
                     <th>Amount</th>
                     <th>Price</th>
+                    <th>Date</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -42,6 +43,7 @@
                     <td>{{ $buying->fuel->type }}</td>
                     <td>{{ $buying->amount }}</td>
                     <td>{{ $buying->price }}</td>
+                    <td>{{ \Carbon\Carbon::parse($buying->date)->format('d-m-Y') }}</td>
                     <td>
                         <a href="{{route('buyings.edit', ['buying' => $buying['id']])}}"  class="btn btn-info btn-xs purple"> <i class="fa fa-pencil"></i> Edit </a>
                     </td>

@@ -16,7 +16,7 @@ class EarningHistoryController extends Controller
 
     public function index()
     {
-        $earning_histories = EarningHistory::orderBy('id')->get();
+        $earning_histories = EarningHistory::orderBy('date')->get();
 
         return view('earning_histories.index', compact('earning_histories'));
     }

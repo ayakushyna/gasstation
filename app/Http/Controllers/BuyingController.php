@@ -42,7 +42,8 @@ class BuyingController extends Controller
     {
         $validator = Validator::make( request()->all(),[
             'amount' => 'required|numeric|max:1000',
-            'price' => 'required|numeric'
+            'price' => 'required|numeric',
+            'date' => 'required|date',
         ]);
 
         if ($validator->fails()) {
@@ -53,7 +54,8 @@ class BuyingController extends Controller
             'fuel_id' => request('fuel'),
             'provisioner_id' => request('provisioner'),
             'amount' => request('amount'),
-            'price' => request('price')
+            'price' => request('price'),
+            'date' => request('date'),
         ]);
 
         return redirect()->route('buyings');
@@ -63,7 +65,8 @@ class BuyingController extends Controller
     {
         $validator = Validator::make( request()->all(),[
             'amount' => 'required|numeric|max:1000',
-            'price' => 'required|numeric'
+            'price' => 'required|numeric',
+            'date' => 'required|date',
         ]);
 
         if ($validator->fails()) {
@@ -74,7 +77,8 @@ class BuyingController extends Controller
             'fuel_id' => request('fuel'),
             'provisioner_id' => request('provisioner'),
             'amount' => request('amount'),
-            'price' => request('price')
+            'price' => request('price'),
+            'date' => request('date'),
         ]);
 
         return redirect()->route('buyings');
