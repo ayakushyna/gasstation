@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Client;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class ClientController extends Controller
 {
-    //    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
+        public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
@@ -46,6 +47,13 @@ class ClientController extends Controller
             'first_name' => request('first_name'),
             'last_name' => request('last_name'),
             'email' => request('email'),
+        ]);
+
+        User::insert([
+            'name' => request('first_name'). " ". request('last_name'),
+            'email' => request('email'),
+            'password' => bcrypt('client'),
+            'id_role' => 3
         ]);
 
         return redirect()->route('clients');

@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\Validator;
 
 class GasStationController extends Controller
 {
-    //    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
+        public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {

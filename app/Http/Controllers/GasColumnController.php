@@ -10,10 +10,10 @@ use Illuminate\Validation\Rule;
 
 class GasColumnController extends Controller
 {
-    //    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
+        public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {

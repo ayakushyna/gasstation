@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Validator;
 
 class WorkerController extends Controller
 {
-    //    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
+        public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
@@ -57,6 +57,7 @@ class WorkerController extends Controller
             'last_name' => request('last_name'),
             'birthday' => request('birthday'),
         ]);
+
 
         return redirect()->route('workers');
     }

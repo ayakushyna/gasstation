@@ -20,31 +20,39 @@
             <!-- BEGIN USER LOGIN DROPDOWN -->
             <li class="dropdown user">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                    <span class="username username-hide-on-mobile">Nick </span>
+                    <span class="username username-hide-on-mobile">Profile </span>
                     <i class="fa fa-angle-down"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li>
-                        <a href="extra_profile.html"><i class="fa fa-user"></i> My Profile</a>
-                    </li>
-                    <li>
-                        <a href="page_calendar.html"><i class="fa fa-calendar"></i> My Calendar</a>
-                    </li>
-                    <li>
-                        <a href="page_inbox.html"><i class="fa fa-envelope"></i> My Inbox <span class="badge badge-danger">
-						3 </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-tasks"></i> My Tasks <span class="badge badge-success">
-						7 </span>
-                        </a>
-                    </li>
+                    {{--<li>--}}
+                        {{--<a href="extra_profile.html"><i class="fa fa-user"></i> My Profile</a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                        {{--<a href="page_calendar.html"><i class="fa fa-calendar"></i> My Calendar</a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                        {{--<a href="page_inbox.html"><i class="fa fa-envelope"></i> My Inbox <span class="badge badge-danger">--}}
+						{{--3 </span>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                        {{--<a href="#"><i class="fa fa-tasks"></i> My Tasks <span class="badge badge-success">--}}
+						{{--7 </span>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
                     <li class="divider">
                     </li>
                     <li>
-                        <a href="login.html"><i class="fa fa-key"></i> Log Out</a>
+                        {{--<a class="dropdown-item" href="{{ route('logout') }}"--}}
+                           {{--onclick="event.preventDefault();--}}
+                                                     {{--document.getElementById('logout-form').submit();">--}}
+                            {{--{{ __('Logout') }}</a>--}}
+
+                        <a href="{{url('/exit')}}">Logout</a>
                     </li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </ul>
             </li>
             <!-- END USER LOGIN DROPDOWN -->

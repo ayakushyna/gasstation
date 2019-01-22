@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('homepage.index');
 });
 
+Route::get('/exit', 'HomeController@goodbye');
 //Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/fuels', 'FuelController@index')->name('fuels');
@@ -93,3 +94,6 @@ Route::get('/orders/{order}/edit', 'OrderController@edit')->name('orders.edit');
 Route::post('/orders/store', 'OrderController@store')->name('orders.store');
 Route::post('/orders/{order}', 'OrderController@update')->name('orders.update');
 Route::post('/orders', 'OrderController@delete')->name('orders.delete');
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
