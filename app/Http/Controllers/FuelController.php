@@ -33,7 +33,7 @@ class FuelController extends Controller
     public function store()
     {
         $validator = Validator::make( request()->all(),[
-            'type' => 'required|numeric|max:50',
+            'type' => 'required|max:50',
             'amount'=>'required|numeric|max:1000',
             'price' => 'required|numeric',
         ]);
@@ -54,7 +54,7 @@ class FuelController extends Controller
     public function update(Fuel $fuel)
     {
         $validator = Validator::make( request()->all(),[
-            'type' => 'required|numeric|max:50',
+            'type' => 'required|max:50',
             'amount'=>'required|numeric|max:1000',
             'price' => 'required|numeric',
         ]);

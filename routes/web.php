@@ -11,12 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('homepage.index');
-});
 
 Route::get('/exit', 'HomeController@goodbye');
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/fuels', 'FuelController@index')->name('fuels');
 Route::get('/fuels/create', 'FuelController@create')->name('fuels.create');

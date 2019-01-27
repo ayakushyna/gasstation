@@ -58,6 +58,10 @@ class BuyingController extends Controller
             'date' => request('date'),
         ]);
 
+        $fuel = Fuel::where('id',request('fuel'))->first();
+        $fuel->amount += request('amount');
+        $fuel->save();
+
         return redirect()->route('buyings');
     }
 
@@ -72,6 +76,11 @@ class BuyingController extends Controller
         if ($validator->fails()) {
             return redirect()->route('buyings.edit')->withErrors($validator)->withInput();
         }
+
+        $fuel = Fuel::where('id',request('fuel'))->first();
+        $old_value = Buying::where('id',$buying->id)->first();
+        $fuel->amount = $fuel->amount - $old_value->amount + request('amount');
+        $fuel->save();
 
         Buying::where('id',$buying->id)->update([
             'fuel_id' => request('fuel'),
